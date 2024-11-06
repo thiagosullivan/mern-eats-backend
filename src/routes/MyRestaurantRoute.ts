@@ -28,5 +28,13 @@ router.post(
   jwtParse as Handler,
   MyRestaurantController.createMyRestaurant as RequestHandler
 );
+router.put(
+  "/",
+  upload.single("imageFile"),
+  validateMyRestaurantRequest as any,
+  jwtCheck,
+  jwtParse as Handler,
+  MyRestaurantController.updateMyRestaurant as RequestHandler
+);
 
 export default router;
